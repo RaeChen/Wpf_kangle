@@ -1,0 +1,41 @@
+﻿<Window x:Class="Wpf_kangle.PageWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf_kangle"
+        mc:Ignorable="d"
+        Title="PageWindow" Height="633" Width="1279">
+    <Grid>
+        <TabControl HorizontalAlignment="Left" Height="606" VerticalAlignment="Top" Width="1274" Margin="0,0,0,-0.5">
+            <TabItem Header="前台明细">
+                <Grid Background="#FFE5E5E5">
+                    <Button  Content="提取票面"  HorizontalAlignment="Left" Margin="116,505,0,0" VerticalAlignment="Top" Width="76" Background="{DynamicResource {x:Static SystemColors.MenuHighlightBrushKey}}" Click="tiqupiaomian_Click"/>
+                    <DataGrid ItemsSource="{Binding}" Name="datagrid_qiantaimingxi_piaomian" HorizontalAlignment="Left" Height="100" Margin="279,27,0,0" VerticalAlignment="Top" Width="979">
+                        <!--<DataGrid.Columns>
+                            <DataGridTextColumn Header="工号" Width="*" Binding="{Binding mingxi_gonghao}" />
+                            <DataGridTextColumn Header="订票日期"  Width="*" Binding="{Binding mingxi_dingpiaoriqi}" />
+                            <DataGridTextColumn Header="票价" Width="*" Binding="{Binding mingxi_hanshuijia}" />
+                        </DataGrid.Columns>-->
+                    </DataGrid>
+                    <RichTextBox Name="richtextbox_mingxi_tiqupiaomian" HorizontalAlignment="Left" Height="451" Margin="46,27,0,0" VerticalAlignment="Top" Width="228">
+                        <FlowDocument>
+                            <Paragraph>
+                                <Run/>
+                            </Paragraph>
+                        </FlowDocument>
+                    </RichTextBox>
+                    <DatePicker Name="datepicker_mingxi" HorizontalAlignment="Left" Margin="46,0,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="前台汇总">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="主任汇总"/>
+            <TabItem Header="财务对账"/>
+            <TabItem Header="系统维护"/>
+            <DataGrid Height="100" Width="100"/>
+        </TabControl>
+
+    </Grid>
+</Window>
